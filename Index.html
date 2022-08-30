@@ -8,5 +8,18 @@
 </head>
 <body>
     Esto se publico
+   <div id="lista"></div>
+    <script>
+
+        const url =  "https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json";
+        const request = new XMLHttpRequest();
+        request.open("GET",url); 
+        request.responseType = "json";
+        request.send();
+    request.onload = function () {        
+        document.getElementById("lista").innerHTML = request.response.squadName;
+    }
+
+    </script>
 </body>
 </html>
